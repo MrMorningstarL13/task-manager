@@ -7,5 +7,9 @@ public abstract class User {
     public String name;
     private String password;
 
-    public List<Task> taskList = new ArrayList<>();
+
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
 }
