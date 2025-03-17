@@ -1,8 +1,8 @@
 package ase.en.sqt.models;
 
-public class RegularUser extends User {
+public class Admin extends User {
 
-    public RegularUser(String name)
+    public Admin(String name)
     {
         super(name);
     }
@@ -10,12 +10,12 @@ public class RegularUser extends User {
     @Override
     public boolean canDeleteTask()
     {
-        return false;
+        return true;
     }
 
     @Override
     public boolean canViewAllTasks()
     {
-        return false;
+        return true;
     }
 }
