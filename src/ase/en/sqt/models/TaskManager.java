@@ -10,23 +10,37 @@ public class TaskManager {
         manager.put(user, new ArrayList<>());
     }
 
-    public void createTask(String title, String description, User user)
+    public void createTask(User user)
     {
+        Scanner scanner = new Scanner(System.in);
         if (!manager.containsKey(user))
         {
             System.out.println("User not found in TaskManager.");
             return;
         }
+
+        System.out.println("Task title: ");
+        String title = scanner.next();
+        System.out.println("Task description: ");
+        String description = scanner.next();
+
         Task task = new Task(title, description, false);
         manager.get(user).add(task);
         System.out.println("Task created: " + task);
     }
 
-    public void updateTask(User user, int taskId, String title, String description)
+    public void updateTask(User user)
     {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("ID of task to be modified:");
+        int taskId = scanner.nextInt();
         Task task = findTask(user, taskId);
         if (task != null)
         {
+            System.out.println("New task title: ");
+            String title = scanner.next();
+            System.out.println("New task description: ");
+            String description = scanner.next();
             task.setTitle(title);
             task.setDescription(description);
             System.out.println("Task updated: " + task);
@@ -35,7 +49,7 @@ public class TaskManager {
         }
     }
 
-    public void deleteTask(User user, int taskId)
+    public void deleteTask(User user)
     {
         if (!user.canDeleteTask())
         {
@@ -43,6 +57,11 @@ public class TaskManager {
             return;
         }
         List<Task> tasks = manager.get(user);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("ID of task to be deleted:");
+        int taskId = scanner.nextInt();
+
         if (tasks != null && tasks.removeIf(task -> task.getTaskId() == taskId))
         {
             System.out.println("Task deleted successfully.");
@@ -51,13 +70,16 @@ public class TaskManager {
         }
     }
 
-    public void toggleTaskVisibility(User user, int taskId)
+    public void toggleTaskVisibility(User user)
     {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("ID of task to toggle visibility:");
+        int taskId = scanner.nextInt();
+
         Task task = findTask(user, taskId);
         if (task != null)
         {
-            if(!task.isHidden())
-            {
+            if(!task.isHidden()){
                 task.hide();
             } else {
                 task.show();

@@ -20,19 +20,9 @@ public class Task {
         return id;
     }
 
-    public String getTitle()
-    {
-        return title;
-    }
-
     public void setTitle(String title)
     {
         this.title = title;
-    }
-
-    public String getDescription()
-    {
-        return description;
     }
 
     public void setDescription(String description)
@@ -45,27 +35,18 @@ public class Task {
         return isHidden;
     }
 
-    public void setHidden(boolean hidden)
-    {
-        isHidden = hidden;
-    }
 
     public void hide()
     {
-        if (!this.isHidden) {
-            this.isHidden = true;
-        } else {
-            System.out.println("Task is already hidden!");
-        }
+        this.isHidden = true;
+        System.out.println("Task is now hidden!");
+
     }
 
     public void show()
     {
-        if (this.isHidden) {
-            this.isHidden = false;
-        } else {
-            System.out.println("Task is already shown!");
-        }
+        this.isHidden = false;
+        System.out.println("Task is now shown!");
     }
 
     @Override

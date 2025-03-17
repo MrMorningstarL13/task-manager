@@ -11,10 +11,6 @@ public abstract class User {
         this.name = name;
     }
 
-    public String getName()
-    {
-        return name;
-    }
 
     public abstract boolean canDeleteTask();
     public abstract boolean canViewAllTasks();
