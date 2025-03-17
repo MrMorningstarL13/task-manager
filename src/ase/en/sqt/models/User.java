@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class User {
-    private String name;
+    public String name;
 
     public User(String name)
     {
@@ -14,4 +14,12 @@ public abstract class User {
 
     public abstract boolean canDeleteTask();
     public abstract boolean canViewAllTasks();
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
 }
