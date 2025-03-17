@@ -1,13 +1,21 @@
 package ase.en.sqt.models;
 
-import ase.en.sqt.Interfaces.IView;
-
-import java.util.List;
-
 public class RegularUser extends User {
 
-    public RegularUser(String name, String password) {
-        super(name, password);
+    public RegularUser(String name)
+    {
+        super(name);
     }
 
+    @Override
+    public boolean canDeleteTask()
+    {
+        return false;
+    }
+
+    @Override
+    public boolean canViewAllTasks()
+    {
+        return false;
+    }
 }
