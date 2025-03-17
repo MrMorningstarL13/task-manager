@@ -4,12 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class User {
-    public String name;
-    private String password;
+    private String name;
 
-
-    public User(String name, String password) {
+    public User(String name)
+    {
         this.name = name;
-        this.password = password;
     }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public abstract boolean canDeleteTask();
+    public abstract boolean canViewAllTasks();
 }
