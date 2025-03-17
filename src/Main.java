@@ -1,7 +1,6 @@
 import ase.en.sqt.models.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -24,7 +23,7 @@ public class Main {
                     5 - Update task
                     6 - Delete task
                     7 - Toggle task visibility
-                    8 - Get visibile tasks
+                    8 - Get visible tasks
                     9 - Get all tasks
                     0 - Exit the program"""
             );
